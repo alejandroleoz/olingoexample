@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JPAEDMMappingModel
+        xmlns="http://www.apache.org/olingo/odata2/jpa/processor/api/model/mapping">
+
+    <PersistenceUnit name="mysql_PU">
+        <JPAEntityTypes>
+
+            <!-- Class "Author" mapped to entity "Author-->
+            <JPAEntityType name="Author">
+                <EDMEntitySet>AuthorSet</EDMEntitySet>
+                <JPAAttributes>
+                    <JPAAttribute name="id">Id</JPAAttribute>
+                    <JPAAttribute name="name">Name</JPAAttribute>
+                </JPAAttributes>
+                <JPARelationships></JPARelationships>
+            </JPAEntityType>
+
+            <JPAEntityType name="Book">
+                <EDMEntitySet>BookSet</EDMEntitySet>
+                <JPAAttributes>
+                    <JPAAttribute name="id">Id</JPAAttribute>
+                    <JPAAttribute name="title">Title</JPAAttribute>
+                    <JPAAttribute name="description">Description</JPAAttribute>
+                </JPAAttributes>
+                <JPARelationships>
+                    <JPARelationship name="author">Author</JPARelationship>
+                </JPARelationships>
+            </JPAEntityType>
+        </JPAEntityTypes>
+
+        <JPAEmbeddableTypes></JPAEmbeddableTypes>
+
+    </PersistenceUnit>
+
+</JPAEDMMappingModel>

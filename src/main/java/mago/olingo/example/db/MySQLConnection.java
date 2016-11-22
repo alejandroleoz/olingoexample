@@ -6,6 +6,7 @@ import javax.persistence.Persistence;
 
 public class MySQLConnection implements IConnection {
 
+    public static final String PERSISTENCE_UNIT = "mysql_PU";
     private static MySQLConnection instance = null;
 
     private EntityManagerFactory factory;
@@ -24,7 +25,7 @@ public class MySQLConnection implements IConnection {
 
     public void createConnection() {
         if(instance == null){
-            this.factory = Persistence.createEntityManagerFactory("mysql_PU");
+            this.factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
             this.entityManager = this.factory.createEntityManager();
         }
     }
