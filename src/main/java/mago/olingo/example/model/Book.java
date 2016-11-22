@@ -2,28 +2,34 @@ package mago.olingo.example.model;
 
 import org.apache.olingo.odata2.api.annotation.edm.*;
 
+import javax.persistence.*;
+
 /**
  * Created by aleoz on 11/22/16.
  */
 
-@EdmEntityType
-@EdmEntitySet
+//@EdmEntityType
+//@EdmEntitySet
+@Entity
 public class Book {
 
-    @EdmKey
-    @EdmProperty
+//    @EdmKey
+//    @EdmProperty
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @EdmProperty
+//    @EdmProperty
     private String name;
 
-    @EdmProperty
+//    @EdmProperty
     private String description;
 
-    @EdmNavigationProperty(
-            name = "author",
-            toType = Author.class,
-            toMultiplicity = EdmNavigationProperty.Multiplicity.ZERO_OR_ONE)
+//    @EdmNavigationProperty(
+//            name = "author",
+//            toType = Author.class,
+//            toMultiplicity = EdmNavigationProperty.Multiplicity.ZERO_OR_ONE)
+    @ManyToOne(targetEntity = Author.class)
     private Author author;
 
     public Long getId() {
