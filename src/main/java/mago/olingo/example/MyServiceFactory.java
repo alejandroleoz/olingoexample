@@ -3,11 +3,9 @@ package mago.olingo.example;
 import org.apache.olingo.odata2.annotation.processor.api.AnnotationServiceFactory;
 import org.apache.olingo.odata2.api.ODataService;
 import org.apache.olingo.odata2.api.ODataServiceFactory;
-import org.apache.olingo.odata2.api.edm.provider.EdmProvider;
 import org.apache.olingo.odata2.api.exception.ODataApplicationException;
 import org.apache.olingo.odata2.api.exception.ODataException;
 import org.apache.olingo.odata2.api.processor.ODataContext;
-import org.apache.olingo.odata2.api.processor.ODataSingleProcessor;
 
 /**
  * Created by aleoz on 11/22/16.

@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>MyODataSampleServlet</servlet-name>
-    <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
+    <servlet-class>mago.olingo.example.MyServlet</servlet-class>
     <init-param>
       <param-name>javax.ws.rs.Application</param-name>
       <param-value>org.apache.olingo.odata2.core.rest.app.ODataApplication</param-value>
