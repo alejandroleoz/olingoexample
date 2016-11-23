@@ -1,0 +1,28 @@
+
+List all for entity:
+GET http://localhost:8080/OlingoExample/MyODataSample.svc/BookSet?$format=json
+Content-type: application/json
+
+-------------------------------------------------------
+
+Save new entry for simple entity:
+POST http://localhost:8080/OlingoExample/MyODataSample.svc/AuthorSet
+Content-type: application/json
+
+{"Name": "Ray Bradbury"}
+
+--------------------------------------------------------
+
+Save new entry with deferred association:
+POST http://localhost:8080/OlingoExample/MyODataSample.svc/BookSet
+Content-type: application/json
+
+{"Title": "Fahrenheit 451", "Description": "Fahrenheit 451 is a dystopian novel by Ray Bradbury, published in 1953. ", "Author": {"__deferred": { "uri": "AuthorSet(1L)"}}}
+
+----------------------------------------------------------
+
+Delete entry
+DELETE http://localhost:8080/OlingoExample/MyODataSample.svc/BookSet(1L)
+Content-type: application/json
+
+
