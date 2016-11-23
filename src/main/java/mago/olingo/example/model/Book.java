@@ -1,7 +1,5 @@
 package mago.olingo.example.model;
 
-import org.apache.olingo.odata2.api.annotation.edm.*;
-
 import javax.persistence.*;
 
 /**
@@ -20,7 +18,7 @@ public class Book {
     private Long id;
 
 //    @EdmProperty
-    private String name;
+    private String title;
 
 //    @EdmProperty
     private String description;
@@ -40,12 +38,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {

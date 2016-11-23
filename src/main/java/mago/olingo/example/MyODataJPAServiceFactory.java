@@ -22,7 +22,7 @@ public class MyODataJPAServiceFactory extends ODataJPAServiceFactory {
             oDataJPAContext.setEntityManagerFactory(emf);
             oDataJPAContext.setPersistenceUnitName(MySQLConnection.PERSISTENCE_UNIT);
 //            oDataJPAContext.setJPAEdmExtension(new EspmProcessingExtension());
-            oDataJPAContext.setJPAEdmMappingModel("JPAEdmMapping.xml");
+            oDataJPAContext.setJPAEdmMappingModel("META-INF/JPAEdmMapping.xml");
             return oDataJPAContext;
         } catch (Exception e) {
             throw new ODataRuntimeException(e);

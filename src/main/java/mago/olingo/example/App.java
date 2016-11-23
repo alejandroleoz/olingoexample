@@ -30,7 +30,7 @@ public class App {
         authorRepo.save(author);
 
         Book book = new Book();
-        book.setName("LALA");
+        book.setTitle("LALA");
         book.setDescription("abcdefghij");
         book.setAuthor(author);
         booksRepo.save(book);
