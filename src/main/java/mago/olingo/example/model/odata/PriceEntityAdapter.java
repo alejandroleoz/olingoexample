@@ -1,44 +1,18 @@
-package mago.olingo.example;
+package mago.olingo.example.model.odata;
 
+import mago.olingo.example.model.Price;
 import org.apache.olingo.odata2.api.edm.EdmSimpleTypeKind;
 import org.apache.olingo.odata2.api.edm.FullQualifiedName;
 import org.apache.olingo.odata2.api.edm.provider.*;
-import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmExtension;
-import org.apache.olingo.odata2.jpa.processor.api.model.JPAEdmSchemaView;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
-public class MyJPAEdmExtension implements JPAEdmExtension {
+public class PriceEntityAdapter implements EntityAdapter<Price>{
 
-    public void extendWithOperation(JPAEdmSchemaView view) {
-    }
-
-    public void extendJPAEdmSchema(JPAEdmSchemaView view) {
-        Schema edmSchema = view.getEdmSchema();
-
-        // add custom entity
-        edmSchema.getEntityTypes().add(this.createPriceEntityType());
-
-        // add custom entity set
-        for(EntityContainer container : edmSchema.getEntityContainers()){
-            if(container.getName().equals("mysql_PUContainer")){
-                container.getEntitySets().add(this.createProceEntitySet());
-            }
-        }
-
-    }
-
-    public InputStream getJPAEdmMappingModelStream() {
-        return null;
-    }
-
-
-
-    private EntityType createPriceEntityType() {
-
+    public EntityType getEntityType() {
         List<Property> properties = new ArrayList<Property>();
         SimpleProperty property;
 
@@ -69,10 +43,14 @@ public class MyJPAEdmExtension implements JPAEdmExtension {
         return type;
     }
 
-    private EntitySet createProceEntitySet() {
+    public EntitySet getEntitySet(String namespace) {
         EntitySet set = new EntitySet();
-        set.setName("PriceSet");
-        set.setEntityType(new FullQualifiedName("mysql_PU", "Price"));
+        set.setName("OrdenSet");
+        set.setEntityType(new FullQualifiedName("mysql_PU", "Orden"));
         return set;
+    }
+
+    public Price createEntityFromProperties(Map<String, Object> properties) {
+        return new Price(888L, (Double)properties.get("Amount"), (String)properties.get("Currency"));
     }
 }
