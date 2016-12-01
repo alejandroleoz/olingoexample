@@ -6,8 +6,10 @@
    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
     <persistence-unit name="mysql_PU" transaction-type="RESOURCE_LOCAL">
-        <!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <non-jta-data-source>jdbc/DefaultDB</non-jta-data-source>
+        <!--<provider>org.hibernate.ejb.HibernatePersistence</provider>-->
 
 
         <class>mago.olingo.example.model.Author</class>
@@ -15,13 +17,14 @@
 
         <properties>
 
-            <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />-->
-            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+            <property name="eclipselink.logging.level" value="SEVERE" />
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop" />-->
 
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/olingodemo"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="123456"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/olingodemo"/>-->
+            <!--<property name="javax.persistence.jdbc.user" value="root"/>-->
+            <!--<property name="javax.persistence.jdbc.password" value="123456"/>-->
+            <!--<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>-->
         </properties>
 
     </persistence-unit>
