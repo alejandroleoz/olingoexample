@@ -1,4 +1,4 @@
-package mago.olingo.example;
+package mago.olingo.example.olingo.jpa.extension;
 
 import mago.olingo.example.model.Price;
 import mago.olingo.example.model.odata.PriceEntityAdapter;

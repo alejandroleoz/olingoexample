@@ -1,4 +1,4 @@
-package mago.olingo.example;
+package mago.olingo.example.olingo.jpa.extension;
 
 import mago.olingo.example.db.MySQLConnection;
 import org.apache.olingo.odata2.api.ODataCallback;

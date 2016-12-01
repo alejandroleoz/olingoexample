@@ -1,4 +1,4 @@
-package mago.olingo.example;
+package mago.olingo.example.olingo.jpa.extension;
 
 import org.apache.olingo.odata2.api.edm.EdmSimpleTypeKind;
 import org.apache.olingo.odata2.api.edm.FullQualifiedName;

@@ -1,6 +1,7 @@
-package mago.olingo.example;
+package mago.olingo.example.olingo.jpa;
 
 import mago.olingo.example.db.MySQLConnection;
+import mago.olingo.example.olingo.jpa.extension.MyJPAEdmExtension;
 import org.apache.olingo.odata2.core.exception.ODataRuntimeException;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAContext;
 import org.apache.olingo.odata2.jpa.processor.api.ODataJPAServiceFactory;
